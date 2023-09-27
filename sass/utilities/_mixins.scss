@@ -1,0 +1,44 @@
+@mixin clearfix {
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin centerPosition {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// media query manager
+
+//ORDER base + typography > general layout + grid > page layout > components
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+		@media (max-width: 37.5em) {
+			@content;
+		} //  600px
+	}
+
+	@if $breakpoint == tap-port {
+		@media (max-width: 56.25em) {
+			@content;
+		} //  900px
+	}
+
+	@if $breakpoint == tap-land {
+		@media (max-width: 75em) {
+			@content;
+		} //  1200px
+	}
+
+	@if $breakpoint == big-descktop {
+		@media (min-width: 112.5em) {
+			@content;
+		} //  1800px
+	}
+}

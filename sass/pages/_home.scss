@@ -1,0 +1,348 @@
+.section-about {
+	background-color: $color-gray-white-1;
+	padding: 20rem 0;
+
+	@include respond(tap-port) {
+		padding: 5rem 0 10rem 0;
+	}
+}
+
+.section-features {
+	padding: 20rem 0;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba($color-primary-light, 0.8),
+			rgba($color-primary-dark, 0.8)
+		),
+		url(../img/nat-4.jpg);
+	background-size: cover;
+	background-position: top;
+
+	transform: skewY(-7deg);
+
+	& > * {
+		transform: skewY(7deg);
+	}
+
+	@include respond(tap-port) {
+		padding: 10rem 0;
+	}
+}
+
+.header {
+	height: 85vh;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba($color-primary-light, 0.8),
+			rgba($color-primary-dark, 0.8)
+		),
+		url(../img/hero-small.jpg);
+	background-size: cover;
+	background-position: top;
+	position: relative;
+
+	@supports (clip-path: polygon(0 0)) {
+		clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+		height: 95vh;
+	}
+
+	@media (min-resolution: 192dpi) and (min-width: 37.5em),
+		(-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+		(min-width: 125em) {
+		background-image: linear-gradient(
+				to right bottom,
+				rgba($color-primary-light, 0.8),
+				rgba($color-primary-dark, 0.8)
+			),
+			url(../img/hero.jpg);
+	}
+
+	@include respond(phone) {
+		clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+	}
+
+	&__logo-box {
+		position: absolute;
+		top: 4rem;
+		left: 4rem;
+	}
+
+	&__logo {
+		height: 3.5rem;
+	}
+
+	&__text-box {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+}
+
+.section-tours {
+	background-color: $color-gray-white-1;
+	padding: 15rem 0 5rem 0;
+
+	@include respond(tap-port) {
+		padding: 10rem 0 5rem 0;
+	}
+}
+
+.section__stories {
+	padding: 15rem 0;
+	position: relative;
+
+	@include respond(tap-port) {
+		padding: 10rem 0;
+	}
+}
+
+.section-book {
+	padding: 15rem 0;
+	background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+	@include respond(tap-port) {
+		padding: 10rem 0;
+	}
+}
+
+.book {
+	background-image: linear-gradient(
+			105deg,
+			rgba($color-white, 0.9) 0%,
+			rgba($color-white, 0.9) 50%,
+			transparent 50%
+		),
+		url(../img/nat-10.jpg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 0.3rem;
+	overflow: hidden;
+	box-shadow: 0 1.5rem 4rem $shadow-color;
+	margin: 1rem;
+
+	@include respond(tap-land) {
+		background-image: linear-gradient(
+				105deg,
+				rgba($color-white, 0.9) 0%,
+				rgba($color-white, 0.9) 70%,
+				transparent 70%
+			),
+			url(../img/nat-10.jpg);
+	}
+
+	@include respond(tap-port) {
+		background-image: linear-gradient(to right, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 100%),
+			url(../img/nat-10.jpg);
+	}
+
+	&__form {
+		width: 50%;
+		padding: 6rem;
+		@include respond(tap-land) {
+			width: 70%;
+			padding: 3rem;
+		}
+
+		@include respond(tap-port) {
+			width: 100%;
+			padding: 2rem;
+		}
+	}
+}
+
+.footer {
+	background-color: $color-gray-dark-3;
+	padding: 10rem 0;
+	font-size: 1.4rem;
+	color: $color-gray-dark-2;
+
+	@include respond(tap-port) {
+		padding: 8rem 0;
+	}
+
+	&__logo {
+		width: 15rem;
+		height: auto;
+
+		&-box {
+			text-align: center;
+			margin-bottom: 8rem;
+
+			@include respond(tap-port) {
+				margin-bottom: 6rem;
+			}
+		}
+	}
+
+	&__navigation {
+		display: inline-block;
+		border-top: 0.1rem solid $color-gray-dark;
+		padding-top: 2rem;
+		margin: 3rem;
+		@include respond(tap-port) {
+			margin: 0;
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__item {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 1.5rem;
+		}
+	}
+
+	&__link {
+		&:link,
+		&:visited {
+			color: $color-gray-white-1;
+			background-color: $color-gray-dark-3;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: inline-block;
+			transition: all 0.2s;
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+			box-shadow: 0 0.5rem 2rem $shadow-color;
+		}
+	}
+
+	&__copyright {
+		margin: 3rem;
+		display: inline-block;
+		border-top: 0.1rem solid $color-gray-dark;
+		padding-top: 2rem;
+		text-align: center;
+
+		@include respond(tap-port) {
+			margin: 0;
+			width: 100%;
+		}
+	}
+}
+
+.popup {
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba($color-gray-dark-3, $alpha: 0.8);
+	z-index: +6;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s;
+	@supports (backdrop-filter: blur(10px)) {
+		backdrop-filter: blur(10px);
+		background-color: rgba($color-gray-dark-3, $alpha: 0.4);
+	}
+
+	&:target {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&:target &__content {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	&__close {
+		&:link,
+		&:visited {
+			color: $color-gray-dark;
+			position: absolute;
+			top: 2.5rem;
+			right: 2.5rem;
+			font-size: 3rem;
+			text-decoration: none;
+			display: inline-block;
+			line-height: 1;
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+		}
+	}
+
+	&__content {
+		@include centerPosition;
+
+		width: 75%;
+		background-color: $color-white;
+		box-shadow: 0 2rem 4rem $shadow-color;
+		border-radius: 0.3rem;
+		display: table;
+		overflow: hidden;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.25);
+		transition: all 0.4s 0.2s;
+
+		@include respond(tap-land) {
+			display: block;
+		}
+	}
+
+	&__left {
+		width: 33.33333%;
+		display: table-cell;
+		@include respond(tap-land) {
+			display: block;
+			width: 100%;
+		}
+
+		@include respond(tap-port) {
+			display: none;
+		}
+	}
+
+	&__right {
+		width: 66.66666%;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 3rem 5rem;
+		@include respond(tap-land) {
+			display: block;
+			width: 100%;
+		}
+		@include respond(tap-port) {
+			padding: 1rem 2rem;
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		@include respond(tap-land) {
+			display: inline-block;
+			width: 49.8%;
+			height: 30rem;
+		}
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		margin-bottom: 4rem;
+
+		column-count: 2;
+		column-gap: 4rem;
+		column-rule: 1px solid $color-gray-white-2;
+		hyphens: auto;
+		@include respond(phone) {
+			font-size: 1.2rem;
+			margin-bottom: 2rem;
+			column-gap: 2rem;
+		}
+	}
+}
